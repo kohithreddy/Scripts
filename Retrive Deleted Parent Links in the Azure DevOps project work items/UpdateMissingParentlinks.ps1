@@ -4,7 +4,7 @@
 
 $token = "<Enter PAT Token>"
 
-$changedate="2020-09-18"
+$changedate="<Change Date>"
 
 $pat = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("PAT:$token"))
 

@@ -1,0 +1,1 @@
+az network nsg rule delete --name devopsIP  --nsg-name <NSGName> --resource-group <RESOURCEGROUPNAME>

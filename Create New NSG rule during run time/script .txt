@@ -1,0 +1,6 @@
+$ipresponse = Invoke-RestMethod -Uri "https://ipinfo.io/json"
+$myip = $ipresponse.ip
+Write-Host "Current IP: " $myip
+
+
+az network nsg rule create --name devopsIP --nsg-name <NSGName> --resource-group <RESOURCEGROUPNAME> --access Allow --source-port-ranges * --destination-address-prefixes * --source-address-prefixes $myip --source-port-ranges * --destination-port-ranges * --direction Inbound --priority 201

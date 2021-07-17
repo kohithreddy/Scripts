@@ -1,0 +1,6 @@
+$ipresponse = Invoke-RestMethod -Uri "https://ipinfo.io/json"
+$myip = $ipresponse.ip
+Write-Host "Current IP: " $myip
+
+
+az functionapp config access-restriction add --resource-group <ResourceGroupName> --name <AppName> --rule-name 'MS hosted IP addition' --action Allow --ip-address $myip --priority 200
